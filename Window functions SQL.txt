@@ -1,0 +1,9 @@
+SELECT A.first_name, f.title, f.film_id, row_number() over(partition by A.first_name) as rn
+	FROM film f
+join
+	film_actor FM
+	ON f.film_id = FM.film_id
+LEFT join
+
+actor A
+ON FM.actor_id = A.actor_id
